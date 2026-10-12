@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <h1 class="logo">Weather Dashboard</h1>
+    <p class="tagline">Live weather for any city</p>
+  </header>
+
+  <main class="container">
+
+    <!-- Search -->
+    <form class="search" id="search-form">
+      <label for="city-input" class="visually-hidden">City name</label>
+      <input type="text" id="city-input" name="city" placeholder="Enter a city, e.g. Beirut" autocomplete="off">
+      <button type="submit" id="search-btn">Search</button>
+    </form>
+
+    <!-- Loading indicator -->
+    <div class="loading hidden" id="loading" role="status">
+      <span class="spinner"></span>
+      <p>Loading weather data...</p>
+    </div>
+
+    <!-- Error message -->
+    <div class="error hidden" id="error" role="alert">
+      <p id="error-text"></p>
+    </div>
+
+    <!-- Start message, shown before the first search -->
+    <div class="empty" id="empty">
+      <p>Search for a city to see its current weather.</p>
+    </div>
+
+    <!-- Weather results (filled in by app.js) -->
+    <section class="weather hidden" id="weather">
+      <div class="weather-main">
+        <div>
+          <h2 id="city-name"></h2>
+          <p class="date" id="local-time"></p>
+        </div>
+        <div class="current">
+          <img id="weather-icon" src="" alt="">
+          <p class="temp" id="temp"></p>
+        </div>
+        <p class="description" id="description"></p>
+      </div>
+
+      <div class="details">
+        <div class="detail-card">
+          <h3>Feels like</h3>
+          <p id="feels-like"></p>
+        </div>
+        <div class="detail-card">
+          <h3>Humidity</h3>
+          <p id="humidity"></p>
+        </div>
+        <div class="detail-card">
+          <h3>Wind speed</h3>
+          <p id="wind"></p>
+        </div>
+        <div class="detail-card">
+          <h3>Pressure</h3>
+          <p id="pressure"></p>
+        </div>
+        <div class="detail-card">
+          <h3>Visibility</h3>
+          <p id="visibility"></p>
+        </div>
+        <div class="detail-card">
+          <h3>Min / Max</h3>
+          <p id="min-max"></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Raymond Rechdan - Web Programming - Data from OpenWeatherMap</p>
+  </footer>
+
+  <!-- config.js holds the API key and is not on GitHub (see README) -->
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
